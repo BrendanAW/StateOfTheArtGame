@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="mainBorderPane" prefHeight="403.0" prefWidth="630.0" stylesheets="@GameDesign.css"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.Controller">
+    <center>
+        <VBox prefHeight="328.0" prefWidth="365.0" BorderPane.alignment="CENTER">
+            <GridPane fx:id="gridPane" layoutX="10.0" layoutY="10.0">
+                <padding>
+                    <Insets bottom="30.0" top="30.0"/>
+                </padding>
+            </GridPane>
+            <TextArea fx:id="textToPlayer" editable="false" wrapText="true"/>
+        </VBox>
+    </center>
+    <right>
+        <ListView fx:id="playerStats" mouseTransparent="true" prefHeight="303.0" prefWidth="181.0"
+                  BorderPane.alignment="CENTER"/>
+    </right>
+    <left>
+        <VBox prefHeight="328.0" prefWidth="137.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="11.0" prefWidth="100.0">
+                <Label prefHeight="25.0" prefWidth="126.0" text="Fighters In Arena:">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+            </HBox>
+            <HBox prefHeight="165.0" prefWidth="100.0">
+                <ListView fx:id="playersInArena" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0"/>
+            </HBox>
+            <HBox prefHeight="21.0" prefWidth="137.0">
+                <Label text="Dead Fighters:">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+                <ListView fx:id="deadFighters" prefHeight="150.0" prefWidth="137.0"/>
+            </HBox>
+        </VBox>
+    </left>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="Load">
+                <MenuItem mnemonicParsing="false" text="Fighter"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Save">
+                <MenuItem mnemonicParsing="false" text="Fighter"/>
+                <MenuItem mnemonicParsing="false" text="Map"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Delete">
+                <MenuItem mnemonicParsing="false" text="Fighter"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <bottom>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <VBox fx:id="playerInputContainer" prefHeight="100.0" prefWidth="521.0">
+                <TextArea fx:id="textToComputer" disable="true" prefHeight="200.0" prefWidth="200.0"/>
+                <Button fx:id="submitPlayerInput" mnemonicParsing="false" text="Submit" visible="false"/>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="573.0">
+                <GridPane fx:id="controllerPanel" alignment="CENTER" hgap="10.0">
+                    <Button mnemonicParsing="false" prefWidth="70.0" text="Up" GridPane.columnIndex="3"/>
+                    <Button mnemonicParsing="false" prefWidth="70" text="Left" GridPane.columnIndex="2"
+                            GridPane.rowIndex="2"/>
+                    <Button mnemonicParsing="false" prefWidth="70" text="Down" GridPane.columnIndex="3"
+                            GridPane.rowIndex="3"/>
+                    <Button mnemonicParsing="false" prefWidth="70" text="Right" GridPane.columnIndex="4"
+                            GridPane.rowIndex="2"/>
+                    <Button mnemonicParsing="false" prefWidth="70.0" text="Attack" GridPane.columnIndex="1"/>
+                    <Button mnemonicParsing="false" prefWidth="70.0" text="Move" GridPane.columnIndex="1"
+                            GridPane.rowIndex="2"/>
+                    <Button mnemonicParsing="false" prefWidth="70.0" text="Special" GridPane.columnIndex="1"
+                            GridPane.rowIndex="3"/>
+                    <Button mnemonicParsing="false" prefWidth="70.0" text="Quit" GridPane.columnIndex="2"
+                            GridPane.rowIndex="2"/>
+                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="70.0"
+                            text="Square" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                    <Button mnemonicParsing="false" prefWidth="70.0" text="Rectangle" visible="false"
+                            GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2"/>
+                    <Button mnemonicParsing="false" text="Sepuku" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+                    <Button mnemonicParsing="false" text="Nothing" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                    <Button mnemonicParsing="false" text="Archer" GridPane.rowIndex="2"/>
+                    <Button mnemonicParsing="false" text="BigMan" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <Button mnemonicParsing="false" text="Knight" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                </GridPane>
+            </VBox>
+        </HBox>
+    </bottom>
+</BorderPane>
